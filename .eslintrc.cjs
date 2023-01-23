@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    node:true,
+    node: true,
   },
   extends: [
     "eslint:recommended",
@@ -28,7 +28,7 @@ module.exports = {
       { vars: "all", args: "after-used", ignoreRestSiblings: false },
     ],
   },
-  globals:{
-    document:false,
-  }
+  globals: {
+    document: false,
+  },
 };
