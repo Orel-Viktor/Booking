@@ -1,13 +1,13 @@
 // Core
 import { configureStore } from "@reduxjs/toolkit"
-// Ebgine
-import destination from "../core/destination/slice"
+// Engine
+import { destinationReducer } from "../core/destination/slice"
 
 
 const store = configureStore({
     reducer: {
         // hotels
-        destination
+        destination: destinationReducer
     },
     middleware: () => []
 

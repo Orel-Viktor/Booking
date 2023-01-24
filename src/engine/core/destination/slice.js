@@ -17,4 +17,4 @@ const destination = createSlice({
 })
 
 export const { setItems, setLoading } = destination.actions
-export default destination.reducer
+export const destinationReducer = destination.reducer
