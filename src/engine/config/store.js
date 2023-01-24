@@ -1,16 +1,22 @@
 // Core
-import { configureStore } from "@reduxjs/toolkit"
+import { configureStore } from "@reduxjs/toolkit";
 // Engine
-import { destinationReducer } from "../core/destination/slice"
+import { destinationReducer } from "../core/destination/slice";
+import { createBrowserHistory } from "history";
+import { createReduxHistoryContext } from "redux-first-history";
 
+const { createReduxHistory, routerMiddleware, routerReducer } =
+  createReduxHistoryContext({
+    history: createBrowserHistory(),
+  });
 
-const store = configureStore({
-    reducer: {
-        // hotels
-        destination: destinationReducer
-    },
-    middleware: () => []
+export const store = configureStore({
+  reducer: {
+    routerReducer,
+    // hotels
+    destination: destinationReducer,
+  },
+  middleware: () => [routerMiddleware],
+});
 
-
-})
-export default store
+export const history = createReduxHistory(store);
