@@ -6,17 +6,17 @@ import { createBrowserHistory } from "history";
 import { createReduxHistoryContext } from "redux-first-history";
 
 const { createReduxHistory, routerMiddleware, routerReducer } =
-  createReduxHistoryContext({
-    history: createBrowserHistory(),
-  });
+    createReduxHistoryContext({
+        history: createBrowserHistory(),
+    });
 
 export const store = configureStore({
-  reducer: {
-    routerReducer,
-    // hotels
-    destination: destinationReducer,
-  },
-  middleware: () => [routerMiddleware],
+    reducer: {
+        router: routerReducer,
+        // hotels
+        destination: destinationReducer,
+    },
+    middleware: () => [routerMiddleware],
 });
 
 export const history = createReduxHistory(store);
