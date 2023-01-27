@@ -1,9 +1,9 @@
 // Core
 import React from 'react';
 // Parts
-import { Box } from '@mui/material/Box';
+import  Box  from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Button from './Button';
+import {Button} from "./Button"
 import { styled } from '@mui/system'
 
 const Wrapper = styled(Box)({
@@ -18,8 +18,8 @@ export function Header() {
         <Wrapper component="header">
             Header
             <Stack spacing={2} direction="row">
-                <Button>Text</Button>
-                <Button>Contained</Button>
+                <Button>Кнопка</Button>
+                <Button>Кнопка</Button>
             </Stack>
         </Wrapper>
     )
