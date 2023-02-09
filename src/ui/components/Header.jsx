@@ -1,10 +1,12 @@
 // Core
 import React from 'react';
 // Parts
-import  Box  from '@mui/material/Box';
+import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import {Button} from "./Button"
+import { Button } from "./Button"
 import { styled } from '@mui/system'
+// Engine
+import { routes } from "../../engine/config/routers"
 
 const Wrapper = styled(Box)({
     display: "flex",
@@ -18,8 +20,8 @@ export function Header() {
         <Wrapper component="header">
             Header
             <Stack spacing={2} direction="row">
-                <Button>Кнопка</Button>
-                <Button>Кнопка</Button>
+                <Button to={routes.home}>Home</Button>
+                <Button to={routes.about}>About</Button>
             </Stack>
         </Wrapper>
     )
