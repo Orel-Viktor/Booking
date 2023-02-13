@@ -4,7 +4,7 @@ import { store } from "../../engine/config/store";
 import React from "react";
 import { Provider } from "react-redux";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { orange } from "@mui/material/colors";
+import { orange,green} from "@mui/material/colors";
 import { Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
 // Parts
@@ -14,6 +14,9 @@ const theme = createTheme({
   palette: {
     primary: {
       main: orange[600],
+    },
+    secondary: {
+      main: green[500],
     },
   },
 });

@@ -12,9 +12,10 @@ const destination = createSlice({
         },
         setLoading: (state, action) => {
             state.loading = action.payload
-        },
+        },    
     }
 })
+
 
 export const { setItems, setLoading } = destination.actions
 export const destinationReducer = destination.reducer
