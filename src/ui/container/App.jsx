@@ -15,8 +15,8 @@ function App() {
     <HistoryRouter history={history}>
       <Routes>
         <Route path="/" element={<Layout />}>
-          {pages.map((route, id) => (
-            <Route key={id} path={route.path} element={route.element} />
+          {pages.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
           ))}
         </Route>
       </Routes>
