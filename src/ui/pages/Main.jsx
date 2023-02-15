@@ -27,16 +27,16 @@ export function Main() {
             <Box component="form" onSubmit={handleSubmit}>
               <Grid container spacing={5}>
                 <Grid item xs={3}>
-                  <Field name="destination" label="destination"component={Select}></Field>
+                  <Field name="destination" label="destination"component={Select} option={[]}/>
                 </Grid>
                 <Grid item xs={3}>
-                  <Field name="check_in" label="check_in "component={DataPicker}></Field>
+                  <Field name="check_in" label="check_in "component={DataPicker}/>
                 </Grid>
                 <Grid item xs={3}>
-                  <Field name="check_out" label="check_out" component={DataPicker}></Field>
+                  <Field name="check_out" label="check_out" component={DataPicker}/>
                 </Grid>
                 <Grid item xs={3}>
-                  <Field name="child" label="child" component={TextField}></Field>
+                  <Field name="child" label="child" component={TextField}/>
                 </Grid>
                  <Grid item xs={1}>
                  <Button type="submit" xs={1}  sx={[{ backgroundColor:"secondary.main", fontSize:"20px"},sendButtonhover]}>Send</Button>
