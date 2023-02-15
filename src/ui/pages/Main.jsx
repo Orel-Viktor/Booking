@@ -6,6 +6,7 @@ import { Box, Grid } from "@mui/material";
 import { DataPicker } from "../components/_Form/DataPicker";
 import TextField from "../components/_Form/TextField";
 import { Button } from "../components/Button";
+import { Select } from "../components/_Form/Select";
 
 const sendButtonhover = {
   "&:hover": {
@@ -25,6 +26,9 @@ export function Main() {
           return (
             <Box component="form" onSubmit={handleSubmit}>
               <Grid container spacing={5}>
+                <Grid item xs={3}>
+                  <Field name="destination" label="destination"component={Select}></Field>
+                </Grid>
                 <Grid item xs={3}>
                   <Field name="check_in" label="check_in "component={DataPicker}></Field>
                 </Grid>
