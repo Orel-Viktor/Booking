@@ -1,4 +1,5 @@
 // Core
+import axios from "axios"
 import React from "react";
 import { Form, Field } from "react-final-form";
 // Parts
@@ -54,3 +55,14 @@ export function Main() {
     </div>
   );
 }
+
+const instance = axios.create({
+  baseURL: import.meta.env.VITE_API_LINK,
+  headers: {
+    "Content-Type": "aplication/json",
+  },
+}
+);
+
+console.log(import.meta.env.VITE_API_LINK)
+console.log(instance)
