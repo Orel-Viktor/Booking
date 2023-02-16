@@ -1,5 +1,5 @@
 // Core
-import { call, put } from "redux-saga/effects"
+import { call, put, delay } from "redux-saga/effects"
 // Parts
 import { setItems, setLoading } from "../../slice"
 import api from "../../../../config/axios"
@@ -10,5 +10,6 @@ export function* callDestinationsWorker() {
     if (response.status === 200) {
         yield put(setItems(response.data))
     }
-    yield 
+    yield delay(2000)
+    yield put(setLoading(false))
 }
