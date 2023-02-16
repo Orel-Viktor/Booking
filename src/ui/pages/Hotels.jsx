@@ -4,7 +4,7 @@ import React from "react";
 export function Hotels() {
     return (
         <>
-            <Box component="h1">Travel with</Box>
+            <Box component="h1">Hotels</Box>
         </>
     );
 }

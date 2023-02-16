@@ -1,5 +1,5 @@
 // Core
-import { call, put, delay } from "redux-saga/effects"
+import {  put } from "redux-saga/effects"
 import { push } from "redux-first-history"
 // Engine
 import { routes } from "../../../../config/routers"

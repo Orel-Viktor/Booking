@@ -1,5 +1,5 @@
 // Core
-import { createAction } from "@reduxjs/toolkit/dist/createAction";
+import { createAction } from "@reduxjs/toolkit";
 
 const asyncActions = Object.freeze({
     getHotelsAsync: createAction("GET_HOTELSASYNC")
