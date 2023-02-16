@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const destination = createSlice({
-    name: "destination",
+const destinations = createSlice({
+    name: "destinations",
     initialState: {
         items: [],
         loading: true,
@@ -17,5 +17,5 @@ const destination = createSlice({
 })
 
 
-export const { setItems, setLoading } = destination.actions
-export const destinationReducer = destination.reducer
+export const { setItems, setLoading } = destinations.actions
+export const destinationsReducer = destinations.reducer
