@@ -10,6 +10,7 @@ import { Select } from "./Select";
 import {Button} from "../Button"
 // Engine
 import { getDestinationsAsync } from "../../../engine/core/destination/saga/asyncActions";
+import { getHotelsAsync } from "../../../engine/core/hotels/saga/asyncActions";
 import {selectorsDestinations} from "../../../engine/core/destination/selectors"
 
 const sendButtonhover = {
@@ -21,8 +22,10 @@ const sendButtonhover = {
 export function SearchForm() {
   const dispatch = useDispatch()
   const destinationsItems = useSelector(selectorsDestinations.items)
-  const onSubmit = (value) => {
-   console.log(value)
+  const destinationsLoading = useSelector(selectorsDestinations.loading)
+
+  const onSubmit = (values) => {
+    dispathc(getHotelsAsync(values))
   }
   useEffect(()=>{
     dispatch(getDestinationsAsync()),[dispatch]
@@ -36,7 +39,7 @@ export function SearchForm() {
             <Box component="form" onSubmit={handleSubmit}>
               <Grid container spacing={5}>
                 <Grid item xs={3}>
-                  <Field name="destination" label="destination" component={Select} option={destinationsItems} />
+                  <Field disabled={destinationsLoading} name="destination" label="destination" component={Select} option={destinationsItems} />
                 </Grid>
                 <Grid item xs={3}>
                   <Field name="check_in" label="check_in " component={DataPicker} />
