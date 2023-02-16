@@ -17,5 +17,5 @@ const api = Object.freeze({
         return instance.get('destination',{params})
     },
 })
-console.log(instance)
+
 export default api
