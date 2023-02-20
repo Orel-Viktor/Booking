@@ -2,6 +2,7 @@
 import { call, put, delay } from "redux-saga/effects"
 // Parts
 import { setItems, setLoading } from "../../slice"
+// Engine
 import api from "../../../../config/axios"
 
 export function* callDestinationsWorker() {

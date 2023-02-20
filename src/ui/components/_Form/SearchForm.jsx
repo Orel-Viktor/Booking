@@ -22,7 +22,7 @@ const sendButtonhover = {
 export function SearchForm() {
   const dispatch = useDispatch();
   const destinationsItems = useSelector(selectorsDestinations.items);
-  // const destinationsLoading = useSelector(selectorsDestinations.loading);
+  const destinationsLoading = useSelector(selectorsDestinations.loading);
 
   const onSubmit = (values) => {
     dispatch(getHotelsAsync(values));
@@ -40,7 +40,7 @@ export function SearchForm() {
               <Grid container spacing={5}>
                 <Grid item xs={3}>
                   <Field
-                    // disabled={destinationsLoading}
+                    disabled={destinationsLoading}
                     name="destination"
                     label="destination"
                     component={Select}
