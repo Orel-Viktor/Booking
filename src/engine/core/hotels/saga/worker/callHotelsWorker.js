@@ -7,10 +7,14 @@ import { setItems } from "../../slice";
 import { routes } from "../../../../config/routers";
 import api from "../../../../config/axios";
 
-export function* callHotelsWorker() {
+export function* callHotelsWorker(action) {
+  const { payload } = action;
+  const curentCity = payload.destination;
   const response = yield call(api.getHotels);
   if (response.status === 200) {
-    yield put(setItems(response.data));
+    yield put(
+      setItems(response.data.filter((elem) => elem.city === curentCity))
+    );
   }
   yield delay(2000);
   yield put(push(routes.hotels));

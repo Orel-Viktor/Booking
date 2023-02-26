@@ -9,7 +9,7 @@ function HotelsInner(props) {
   const { hotel } = props;
   return (
     <>
-    <Box sx={{fontSize:"30px", color: "primary.main"}}>{hotel.city}</Box>
+      <Box sx={{ fontSize: "30px", color: "primary.main" }}>{hotel.city}</Box>
       <p>{hotel.address}</p>
       <p>{hotel.name}</p>
     </>
@@ -21,9 +21,13 @@ export function Hotels() {
   return (
     <>
       <Box component="h1">Hotels</Box>
-      {hotelsItems.map((hotel, id) => {
-        return <HotelsInner key={id} hotel={hotel}></HotelsInner>;
-      })}
+      {hotelsItems.length > 0 ? (
+        hotelsItems.map((hotel, id) => {
+          return <HotelsInner key={id} hotel={hotel}></HotelsInner>;
+        })
+      ) : (
+        <div>Упс, отелей нет</div>
+      )}
     </>
   );
 }

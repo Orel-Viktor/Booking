@@ -15,7 +15,7 @@ export function Select(props) {
             label={label}
             disabled={disabled}
             >
-                {option.map(item=>(<MenuItem key={item.value} value={item.value}>{item.label}</MenuItem>))}
+                {option.map(item=>(<MenuItem key={item.value} value={item.label}>{item.label}</MenuItem>))}
             </SelectMUI>
         </FormControl>
     )
